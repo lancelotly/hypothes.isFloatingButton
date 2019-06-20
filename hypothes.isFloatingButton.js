@@ -5,8 +5,7 @@
 // @description  This is a shortcut for using hypothes.is service. It combines the hypothes.is bookmarklet to the page directly for a further convience.
 // @match        *://*/*
 // @exclude      https://hypothes.is/*
-// @grant        GM_addStyle
-// @update      
+// @grant        GM_addStyle      
 // ==/UserScript==
 
 /*--- Create a button in a container div.  It will be styled and positioned with CSS.*/
