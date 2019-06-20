@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            hypothes.isFloatingButton
 // @namespace       https://greasyfork.org/users/296362
-// @version         1.0.2.4
+// @version         1.0.2.5
 // @author          Lancelotly.Sagirrarimeow
 // @description     This is a shortcut for using hypothes.is service. It combines the hypothes.is bookmarklet to the page directly for a further convience.
 // @match           *://*/*
@@ -18,12 +18,15 @@ function buttonClickAction(t){!function(){window.hypothesisConfig=function(){ret
 //--- Style our newly added elements using CSS.
 GM_addStyle(`
 #myFloatingButton {
-    width: 25px;
+width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-image: url(https://blogresources.lancelotly.ml/img/hypothesis-favicon.png);
+    background-image: url(https://blogresources.lancelotly.ml/img/hypothesis_favicon.svg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 60%;
+    background-color: black;
+    background-position-x: center;
+    background-position-y: 65%;
     position: fixed;
     bottom: 20px;
     left: 20px;
