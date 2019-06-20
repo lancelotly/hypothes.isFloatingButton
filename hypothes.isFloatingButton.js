@@ -1,11 +1,14 @@
 // ==UserScript==
-// @name         hypothes.isFloatingButton
-// @version      1.0.2
-// @author       Lancelotly.Sagirrarimeow
-// @description  This is a shortcut for using hypothes.is service. It combines the hypothes.is bookmarklet to the page directly for a further convience.
-// @match        *://*/*
-// @exclude      https://hypothes.is/*
-// @grant        GM_addStyle      
+// @name            hypothes.isFloatingButton
+// @version         1.0.2
+// @author          Lancelotly.Sagirrarimeow
+// @description     This is a shortcut for using hypothes.is service. It combines the hypothes.is bookmarklet to the page directly for a further convience.
+// @match           *://*/*
+// @exclude         https://hypothes.is/*
+// @noframes
+// @run-at          document-idle
+// @grant           GM_addStyle
+// @icon            https://blogresources.lancelotly.ml/img/hypothesis-favicon.png
 // ==/UserScript==
 
 /*--- Create a button in a container div.  It will be styled and positioned with CSS.*/
@@ -23,7 +26,7 @@ GM_addStyle(`
     position: fixed;
     bottom: 20px;
     left: 20px;
-    box-shadow: 0px 2px 5px #666;
+    box-shadow: 0px 2px 6px #666;
 }
 
 #fButton {
