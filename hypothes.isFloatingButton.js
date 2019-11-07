@@ -21,7 +21,7 @@ GM_addStyle(`
 width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-image: url(https://blogresources.lancelotly.ml/img/hypothesis_favicon.svg);
+    background-image: url(https://gitlab.com/lancelotly/blog_resources/raw/master/img/hypothesis_favicon.svg);
     background-repeat: no-repeat;
     background-size: 60%;
     background-color: black;
