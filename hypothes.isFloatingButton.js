@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            hypothes.isFloatingButton
 // @namespace       https://greasyfork.org/users/296362
-// @version         1.0.2.5
+// @version         1.0.3
 // @author          Lancelotly.Sagirrarimeow
 // @description     This is a shortcut for using hypothes.is service. It combines the hypothes.is bookmarklet to the page directly for a further convience.
 // @match           *://*/*
