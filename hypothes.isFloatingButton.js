@@ -21,7 +21,7 @@ GM_addStyle(`
 width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-image: url(https://gitlab.com/lancelotly/blog_resources/raw/master/img/hypothesis_favicon.svg);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjMgNzMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTYzIDU4YTUgNSAwIDAgMSAtNSA1aC0xOWwtNy41IDEwLTcuOC0xMGgtMTguN2E1IDUgMCAwIDEgLTUtNXYtNTNhNSA1IDAgMCAxIDUtNWg1M2E1IDUgMCAwIDEgNSA1eiIgZmlsbD0iI2NlMjAyNyIvPjxnIGZpbGw9IiNmZmYiPjx0ZXh0IGZvbnQtZmFtaWx5PSJQVFNhbnMtQm9sZCwgUFQgU2FucyIgZm9udC1zaXplPSI1OC4xNSIgZm9udC13ZWlnaHQ9IjcwMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNy43NyA1Mi4zOSkiPmg8L3RleHQ+PGNpcmNsZSBjeD0iNDkuOTEiIGN5PSI0NyIgcj0iNSIvPjwvZz48L3N2Zz4=);
     background-repeat: no-repeat;
     background-size: 60%;
     background-color: black;
