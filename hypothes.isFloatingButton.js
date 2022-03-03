@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            hypothes.isFloatingButton
 // @namespace       https://greasyfork.org/users/296362
-// @version         1.0.3
+// @version         1.0.4
 // @author          Lancelotly.Sagirrarimeow
 // @description     This is a shortcut for using hypothes.is service. It combines the hypothes.is bookmarklet to the page directly for a further convience.
 // @match           *://*/*
@@ -13,7 +13,34 @@
 // ==/UserScript==
 
 /*--- Create a button in a container div.  It will be styled and positioned with CSS.*/
-function buttonClickAction(t){!function(){window.hypothesisConfig=function(){return{showHighlights:!0}};var t=document,e=t.createElement("script");e.setAttribute("src","https://hypothes.is/embed.js"),t.body.appendChild(e)}()}function findHighestZIndex(t){for(var e=document.getElementsByTagName(t),n=0,d=0;d<e.length;d++){var i=document.defaultView.getComputedStyle(e[d],null).getPropertyValue("z-index");i>n&&"auto"!=i&&(n=i)}return n}var hNode=document.createElement("div"),z=findHighestZIndex("div");hNode.innerHTML='<div id="fButton" data-toggle="tooltip" data-placement="left" data-original-title="Create"></div>',hNode.style.zIndex=z+1,hNode.setAttribute("id","myFloatingButton"),document.body.appendChild(hNode),document.getElementById("fButton").addEventListener("click",buttonClickAction,!1);
+function buttonClickAction(t) {
+    ! function () {
+        window.hypothesisConfig = function () {
+            return {
+                showHighlights: !0
+            }
+        };
+        var t = document,
+            e = t.createElement("script");
+        e.setAttribute("src", "https://hypothes.is/embed.js")
+        t.body.appendChild(e)
+    }()
+}
+
+function findHighestZIndex(t) {
+    for (var e = document.getElementsByTagName(t), n = 0, d = 0; d < e.length; d++) {
+        var i = document.defaultView.getComputedStyle(e[d], null).getPropertyValue("z-index");
+        i > n && "auto" != i && (n = i)
+    }
+    return n
+}
+var hNode = document.createElement("div"),
+    z = findHighestZIndex("div");
+hNode.innerHTML = '<div id="fButton" data-toggle="tooltip" data-placement="left" data-original-title="Create"></div>'
+hNode.style.zIndex = z + 1
+hNode.setAttribute("id", "myFloatingButton")
+document.body.appendChild(hNode)
+document.getElementById("fButton").addEventListener("click", buttonClickAction, !1);
 
 //--- Style our newly added elements using CSS.
 GM_addStyle(`
