@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            hypothes.isFloatingButton
 // @namespace       https://greasyfork.org/users/296362
-// @version         1.0.4
+// @version         1.0.5
 // @author          Lancelotly.Sagirrarimeow
 // @description     This is a shortcut for using hypothes.is service. It combines the hypothes.is bookmarklet to the page directly for a further convience.
 // @match           *://*/*
@@ -10,6 +10,7 @@
 // @run-at          document-idle
 // @grant           GM_addStyle
 // @icon            https://blogresources.lancelotly.ml/img/hypothesis-favicon.png
+// @connect         *
 // ==/UserScript==
 
 /*--- Create a button in a container div.  It will be styled and positioned with CSS.*/
