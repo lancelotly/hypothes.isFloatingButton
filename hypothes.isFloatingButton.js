@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            hypothes.isFloatingButton
 // @namespace       https://greasyfork.org/users/296362
-// @version         1.0.5
+// @version         23.07.26
 // @author          Lancelotly.Sagirrarimeow
 // @description     This is a shortcut for using hypothes.is service. It combines the hypothes.is bookmarklet to the page directly for a further convience.
 // @match           *://*/*
@@ -9,7 +9,7 @@
 // @noframes
 // @run-at          document-idle
 // @grant           GM_addStyle
-// @icon            https://blogresources.lancelotly.ml/img/hypothesis-favicon.png
+// @icon            data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjMgNzMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTYzIDU4YTUgNSAwIDAgMSAtNSA1aC0xOWwtNy41IDEwLTcuOC0xMGgtMTguN2E1IDUgMCAwIDEgLTUtNXYtNTNhNSA1IDAgMCAxIDUtNWg1M2E1IDUgMCAwIDEgNSA1eiIgZmlsbD0iI2NlMjAyNyIvPjxnIGZpbGw9IiNmZmYiPjx0ZXh0IGZvbnQtZmFtaWx5PSJQVFNhbnMtQm9sZCwgUFQgU2FucyIgZm9udC1zaXplPSI1OC4xNSIgZm9udC13ZWlnaHQ9IjcwMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNy43NyA1Mi4zOSkiPmg8L3RleHQ+PGNpcmNsZSBjeD0iNDkuOTEiIGN5PSI0NyIgcj0iNSIvPjwvZz48L3N2Zz4=
 // @connect         *
 // ==/UserScript==
 
@@ -28,15 +28,21 @@ function buttonClickAction(t) {
     }()
 }
 
-function findHighestZIndex(t) {
-    for (var e = document.getElementsByTagName(t), n = 0, d = 0; d < e.length; d++) {
-        var i = document.defaultView.getComputedStyle(e[d], null).getPropertyValue("z-index");
-        i > n && "auto" != i && (n = i)
-    }
-    return n
+function findMaxZindex() {
+    const zIndexes = [];
+    document
+        .querySelectorAll("*")
+        .forEach(el => {
+        const zIndex = parseInt(window.getComputedStyle(el).zIndex, 10);
+        if (!isNaN(zIndex)) {
+            zIndexes.push(zIndex);
+        }
+    });
+    return Math.max.apply(1, zIndexes);
 }
+
 var hNode = document.createElement("div"),
-    z = findHighestZIndex("div");
+    z = findMaxZindex();
 hNode.innerHTML = '<div id="fButton" data-toggle="tooltip" data-placement="left" data-original-title="Create"></div>'
 hNode.style.zIndex = z + 1
 hNode.setAttribute("id", "myFloatingButton")
