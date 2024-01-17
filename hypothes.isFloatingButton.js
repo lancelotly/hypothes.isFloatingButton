@@ -2,7 +2,7 @@
 // @name            hypothes.isFloatingButton
 // @namespace       https://greasyfork.org/users/296362
 // @updateURL       https://greasyfork.org/scripts/382369-hypothes-isfloatingbutton/code/hypothesisFloatingButton.user.js
-// @version         23.07.26.1
+// @version         240117a
 // @author          Lancelotly.Sagirrarimeow
 // @description     This is a shortcut for using hypothes.is service. It combines the hypothes.is bookmarklet to the page directly for a further convience.
 // @match           *://*/*
@@ -34,11 +34,11 @@ function findMaxZindex() {
     document
         .querySelectorAll("*")
         .forEach(el => {
-        const zIndex = parseInt(window.getComputedStyle(el).zIndex, 10);
-        if (!isNaN(zIndex)) {
-            zIndexes.push(zIndex);
-        }
-    });
+            const zIndex = parseInt(window.getComputedStyle(el).zIndex, 10);
+            if (!isNaN(zIndex)) {
+                zIndexes.push(zIndex);
+            }
+        });
     return Math.max.apply(1, zIndexes);
 }
 
@@ -53,7 +53,7 @@ document.getElementById("fButton").addEventListener("click", buttonClickAction, 
 //--- Style our newly added elements using CSS.
 GM_addStyle(`
 #myFloatingButton {
-width: 25px;
+    width: 25px;
     height: 25px;
     border-radius: 50%;
     background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjMgNzMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTYzIDU4YTUgNSAwIDAgMSAtNSA1aC0xOWwtNy41IDEwLTcuOC0xMGgtMTguN2E1IDUgMCAwIDEgLTUtNXYtNTNhNSA1IDAgMCAxIDUtNWg1M2E1IDUgMCAwIDEgNSA1eiIgZmlsbD0iI2NlMjAyNyIvPjxnIGZpbGw9IiNmZmYiPjx0ZXh0IGZvbnQtZmFtaWx5PSJQVFNhbnMtQm9sZCwgUFQgU2FucyIgZm9udC1zaXplPSI1OC4xNSIgZm9udC13ZWlnaHQ9IjcwMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNy43NyA1Mi4zOSkiPmg8L3RleHQ+PGNpcmNsZSBjeD0iNDkuOTEiIGN5PSI0NyIgcj0iNSIvPjwvZz48L3N2Zz4=);
@@ -64,8 +64,9 @@ width: 25px;
     background-position-y: 65%;
     position: fixed;
     bottom: 20px;
-    left: 20px;
+    left: -15px;
     box-shadow: -2px 2px 9px #202020;
+    transition: width 0.5s, height 0.5s;
 }
 
 #fButton {
@@ -82,4 +83,11 @@ width: 25px;
     font-family: 'Roboto';
     font-size: 18px;
 }
+
+#myFloatingButton:hover {
+    width: 30px;
+    height: 30px;
+    left: 0;
+}
+
 `);
